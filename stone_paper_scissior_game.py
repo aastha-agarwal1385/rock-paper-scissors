@@ -1,26 +1,19 @@
 import random
 
 # determines outcome of single round
-def game(entry,number):
-    #for rock and scissior
-    if entry=="r" and number==3:
-        return "won"
-    elif entry=="s" and number==1: 
-        return "lose" 
+def game(entry, number, user_map, computer_map):
+    user_choice = user_map[entry]
+    computer_choice = computer_map[number]
 
-    # for scissior and paper
-    elif entry=="s" and number==2:
+    if user_choice == computer_choice:
+        return "tie"
+    elif (user_choice == "rock" and computer_choice == "scissor") \
+         or (user_choice == "scissor" and computer_choice == "paper") \
+         or (user_choice == "paper" and computer_choice == "rock"):
         return "won"
-    elif entry=="p" and number==3:
-        return "lose" 
+    else:
+        return "lose"
 
-    # for paper and rock
-    elif entry=="p" and number==1:
-        return "won"
-    elif entry=="r" and number==2:
-        return "lose"  
-    else:  
-        return "tie"    
 
 #INTRODUCTION AND RULES TO PLAY
 print("Hi there,we are going to play stone-paper-scissor ")
@@ -28,10 +21,10 @@ print("Make your choice wisely!! \n")
 print("Rules:")
 print("Game has 5 rounds.")
 print("you will have 5 chances to make a choice.")
-print("You will win if you win 3 or more rounds.")
+print("You will won if you won 3 or more rounds.")
 
 count_round=1
-win = 0
+won = 0
 lose = 0
 while count_round<6:
     print("\n\nround ",count_round)
@@ -55,10 +48,10 @@ while count_round<6:
     
 
     #evalute each round
-    result=game(entry,number) 
+    result=game(entry, number, user_map, computer_map) 
     if result == "won":
         print("you won this round")
-        win += 1
+        won += 1
     elif result == "lose":
         print("you lost this round")
         lose += 1
@@ -69,11 +62,11 @@ while count_round<6:
  
  # FINAL RESULT
 print("\n\nFinal Result:")
-print("Your wins:", win)
+print("Your wins:", won)
 print("Computer wins:", lose)   
-if win > lose:
+if won > lose:
     print("You won the game")
-elif lose > win:
+elif lose > won:
     print("You lost the game")
 else:
     print("The game is a draw")
