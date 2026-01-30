@@ -30,7 +30,8 @@ if entry=="s" or entry=="p" or entry=="r":
     print("you choose:", user_map[entry])
 else:
     print("invalid entry!!")
-    print("please choose:(rock)r,(paper)p,(scissor)s ")   
+    print("please choose:(rock)r,(paper)p,(scissor)s ") 
+    exit()  
 
 if number==1 or number==2 or number==3:
     print("computer choose: ", computer)
