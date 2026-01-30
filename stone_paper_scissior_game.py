@@ -19,28 +19,15 @@ def game(entry,number):
         print("match draw!!")    
 
 number=random.randint(1,3)  
-if number==1:
-    computer="rock"
-elif number==2:
-    computer="paper"
-elif number==3:
-    computer="scissor"
-else:
-    computer="invalid" 
+computer_map={1:"rock",2:"paper",3:"scissor"}
+computer=computer_map[number]
+
 
 entry=input("enter your choice:(rock)r,(paper)p,(scissor)s: ").lower()  
-
-if entry=="s":
-    user="scissor"
-elif entry=="r":
-    user="rock"
-elif entry=="p":
-    user="paper"
-else:
-    user="invalid"    
+user_map={"s":"scissor","r":"rock","p":"paper"} 
 
 if entry=="s" or entry=="p" or entry=="r":
-    print("you choose:", user)
+    print("you choose:", user_map[entry])
 else:
     print("invalid entry!!")
     print("please choose:(rock)r,(paper)p,(scissor)s ")   
