@@ -2,21 +2,21 @@ import random
 def game(entry,number):
     #for rock and scissior
     if entry=="r" and number==3:
-        print("you won")
+        return "you won"
     elif entry=="s" and number==1:
-        print("you lost")   
+        return "you lost"   
     # for scissior and paper
     elif entry=="s" and number==2:
-        print("you won")
+        return "you won"
     elif entry=="p" and number==3:
-        print("you lost")  
+        return "you lost"  
     # for paper and rock
     elif entry=="p" and number==1:
-        print("you won")
+        return "you won"
     elif entry=="r" and number==2:
-        print("you lost")  
+        return "you lost"  
     else:  
-        print("match draw!!")    
+        return "match draw!!"    
 
 number=random.randint(1,3)  
 computer_map={1:"rock",2:"paper",3:"scissor"}
